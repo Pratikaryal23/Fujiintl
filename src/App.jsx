@@ -12,8 +12,8 @@ import JFT from "./pages/courses/jft";
 import JLPT from "./pages/courses/jlpt";
 import NAT from "./pages/courses/nat";
 import Footer from "./components/Footer";
-import About from "./pages/about";
-import Services from "./pages/services";
+import About from "./pages/About";
+import Services from "./pages/Services";
 
 export default function App() {
   return (
@@ -23,7 +23,7 @@ export default function App() {
       <Routes>
         {/* Main Pages */}
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About/>} />
         <Route path="/universities" element={<Universities />} />
          <Route path="/services" element={<Services />} /> 
         <Route path="/gallery" element={<Gallery />} /> 
