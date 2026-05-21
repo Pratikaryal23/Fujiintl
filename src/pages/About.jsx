@@ -52,7 +52,11 @@ export default function About() {
   return (
     <>
       {/* HERO */}
-      <div className="page-hero py-28 bg-black text-white">
+      <div className="page-hero py-28 bg-[#131313] text-white">
+          <div className="absolute  bg-red-800/20 blur-[140px] rounded-full pointer-events-none" />
+
+        {/* SUBTLE GRADIENT */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(230,0,19,0.12),transparent_35%)] pointer-events-none" />
         <div className="container mx-auto px-6">
           <span className="eyebrow animate-fadeUp uppercase tracking-widest text-red-500 text-sm font-semibold">
             Who We Are

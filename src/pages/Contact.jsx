@@ -38,7 +38,11 @@ export default function Contact() {
   return (
     <>
       {/* HERO */}
-      <div className="bg-black text-start py-28 px-6">
+      <div className="bg-[#131313] text-start py-28 px-6">
+        <div className="absolute  bg-red-800/20 blur-[140px] rounded-full pointer-events-none" />
+
+        {/* SUBTLE GRADIENT */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(230,0,19,0.12),transparent_35%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto">
 
           <span className="uppercase tracking-widest text-[#E60013] text-sm font-semibold">
@@ -193,11 +197,11 @@ export default function Contact() {
               <div className="space-y-5 text-sm text-gray-700">
 
                 <p>
-                  ✉ fujiinternationalconsultancy@gmail.com
+                  ✉ fujibutwal@gmail.com
                 </p>
 
                 <p>
-                  ☎ +977 98XXXXXXXX
+                  ☎  071-591937
                 </p>
 
                 <p>

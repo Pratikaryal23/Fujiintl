@@ -62,7 +62,7 @@ export default function Navbar() {
             <li key={item.href} className="relative group">
               <a
                 href={item.href}
-                className={`px-3 py-2 text-sm font-semibold transition-all relative ${
+                className={`px-3 py-2 text-sm  transition-all relative ${
                   isActive(item.href)
                     ? "text-red-600"
                     : scrolled
@@ -135,7 +135,7 @@ export default function Navbar() {
           <a
             key={item.href}
             href={item.href}
-            className={`block px-6 py-3 font-semibold transition ${
+            className={`block px-6 py-3  transition ${
               isActive(item.href) ? "text-red-600" : "text-black"
             } hover:text-red-600`}
           >

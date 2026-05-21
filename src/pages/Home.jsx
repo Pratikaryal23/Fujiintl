@@ -110,7 +110,7 @@ export default function Home() {
           {/* Trust */}
           <div className="flex flex-col items-center gap-2 text-white/50 text-sm text-center">
             <span>
-              Trusted consultancy guiding your journey to study & work abroad
+              Trusted consultancy guiding your journey to study & work in Japan
             </span>
 
             <div className="flex flex-wrap justify-center gap-2 font-semibold text-white/70">

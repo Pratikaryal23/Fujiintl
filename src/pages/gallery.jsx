@@ -42,7 +42,7 @@ export default function Gallery() {
         {/* Header */}
         <div className="text-center mb-16">
 
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Moments of{" "}
             <span className="text-[#E60013]">
               Success & Growth

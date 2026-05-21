@@ -1,31 +1,48 @@
-import { Helmet } from "react-helmet-async";
-import Button from "../components/Button";
+import React from "react";
 
 const services = [
   {
     icon: "🎓",
     title: "Study Visa Guidance",
     description:
-      "Course selection, university application support and admission counselling.",
+      "Course selection, university application support, scholarship advice and admission counselling for study in Japan.",
   },
   {
     icon: "💼",
     title: "Working Visa Guidance",
     description:
-      "Employer matching and work visa support.",
+      "Employer matching, contract review and step-by-step support through work visa applications.",
   },
   {
     icon: "🛂",
     title: "Visa Documentation & Submission",
     description:
-      "Document preparation, translation and filing support.",
+      "Complete document preparation, certified translation, notarization and application filing with authorities.",
   },
   {
     icon: "🏠",
     title: "Pre-departure & Arrival Support",
     description:
-      "Orientation and settlement support after arrival.",
+      "Orientation, accommodation assistance, local registration and early onboarding support after arrival.",
     featured: true,
+  },
+  {
+    icon: "📋",
+    title: "Career & Job Placement Assistance",
+    description:
+      "Job search support, CV coaching and interview preparation with partner employers in Japan.",
+  },
+  {
+    icon: "🧑‍🏫",
+    title: "Language & Exam Prep",
+    description:
+      "JLPT/JFT preparation, partner tutors and study plans to meet institution or employer requirements.",
+  },
+  {
+    icon: "🧾",
+    title: "Employer & Institution Liaison",
+    description:
+      "We coordinate directly with universities and employers to secure offers, COEs and endorsements.",
   },
 ];
 
@@ -34,45 +51,70 @@ const industries = [
   "Caregiving & Healthcare",
   "Manufacturing & Skilled Trades",
   "Hospitality & Service",
-  "Construction",
+  "Construction & Infrastructure",
   "IT & Technical",
+  "Fisheries & Marine",
+  "Food Processing",
 ];
 
 export default function Services() {
   return (
     <>
-      {/* ✅ REPLACED next/head */}
-      <Helmet>
-        <title>Services — FUJI International Consultancy</title>
-      </Helmet>
-
       {/* HERO */}
-      <section className="bg-black text-white py-24 text-center">
-        <span className="text-red-500 uppercase text-sm tracking-widest">
-          What We Offer
-        </span>
+      <div className="relative overflow-hidden page-hero py-28 bg-[#131313] text-white ">
+        {/* RED GLOW */}
+        <div className="absolute  bg-red-800/20 blur-[140px] rounded-full pointer-events-none" />
 
-        <h1 className="text-5xl font-bold mt-4">
-          Your Gateway to Japan
-        </h1>
+        {/* SUBTLE GRADIENT */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(230,0,19,0.12),transparent_35%)] pointer-events-none" />
 
-        <p className="text-white/60 mt-6 max-w-xl mx-auto">
-          Visa support, placement and relocation assistance.
-        </p>
-      </section>
+        <div className="container mx-auto px-6 relative z-10">
+          <span className="eyebrow animate-fadeUp uppercase tracking-widest text-red-500 text-sm font-semibold">
+            What we offer
+          </span>
+
+          <h1 className="animate-fadeUp delay-1 text-5xl md:text-7xl font-bold leading-tight mt-4 mb-6">
+            Your Gateway <br /> to Japan
+          </h1>
+
+          <p className="animate-fadeUp delay-2 text-white/70 text-lg leading-8 max-w-3xl">
+            From visa support to placement and relocation assistance — we guide
+            you through every step of your journey to Japan.
+          </p>
+        </div>
+      </div>
 
       {/* SERVICES */}
-      <section className="py-24 bg-white px-6">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 mb-16">
+            <div>
+              <span className="text-red-600 uppercase tracking-widest text-sm">
+                Our Services
+              </span>
 
+              <h2 className="text-4xl md:text-5xl font-bold mt-4">
+                Complete Support <br /> for Your Japan Journey
+              </h2>
+
+              <div className="w-16 h-1 bg-red-600 my-6" />
+
+              <p className="text-gray-500 leading-7">
+                We provide end-to-end guidance for students and professionals
+                planning to study or work in Japan.
+              </p>
+            </div>
+          </div>
+
+          {/* GRID */}
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <div
                 key={i}
-                className={`p-8 rounded-2xl border transition hover:-translate-y-2 ${
+                className={`p-8 rounded-2xl border transition hover:-translate-y-2 duration-300 ${
                   s.featured
                     ? "bg-red-600 text-white border-red-600"
-                    : "bg-white border-gray-200"
+                    : "bg-white border-gray-200 hover:shadow-lg"
                 }`}
               >
                 <div className="text-4xl mb-4">{s.icon}</div>
@@ -89,16 +131,27 @@ export default function Services() {
       </section>
 
       {/* INDUSTRIES */}
-      <section className="py-24 bg-gray-50 text-center">
-        <h2 className="text-4xl font-bold">
-          Sectors Available in Japan
+      <section className="py-24 px-6 bg-gray-50 text-center">
+        <span className="text-red-600 uppercase tracking-widest text-sm">
+          Career Opportunities
+        </span>
+
+        <h2 className="text-4xl md:text-5xl font-bold mt-4">
+          Sectors Available <br /> in Japan
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-3 mt-10">
-          {industries.map((ind) => (
+        <div className="w-16 h-1 bg-red-600 mx-auto my-6" />
+
+        <p className="text-gray-500 max-w-2xl mx-auto mb-10">
+          We help candidates explore opportunities across trusted industries in
+          Japan.
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-3">
+          {industries.map((ind, i) => (
             <span
-              key={ind}
-              className="px-5 py-2 bg-white border rounded-full text-sm"
+              key={i}
+              className="px-5 py-2 bg-white border rounded-full text-sm hover:border-red-600 hover:text-red-600 transition"
             >
               {ind}
             </span>
@@ -107,15 +160,22 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black text-white py-24 text-center">
-        <h2 className="text-4xl font-bold">
-          Ready to Start Your Journey?
+      <section className="bg-black text-white py-24 px-6 text-center">
+        <h2 className="text-3xl md:text-5xl font-bold text-white">
+          Ready to Start Your Japan Journey?
         </h2>
 
+        <p className="text-white/60 mt-4 max-w-xl mx-auto">
+          Speak with our consultants and get personalized guidance today.
+        </p>
+
         <div className="mt-8">
-          <Button href="/contact" className="bg-red-600 px-8 py-3">
+          <a
+            href="/contact"
+            className="inline-block bg-[#E60013] hover:bg-red-700 text-white  px-10 py-4  transition"
+          >
             Request Consultation
-          </Button>
+          </a>
         </div>
       </section>
     </>
