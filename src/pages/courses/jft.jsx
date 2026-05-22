@@ -1,5 +1,5 @@
 
-import Button from "../../components/Button.jsx";
+import Button from "../../components/Button";
 
 const LEVELS = [
   {
@@ -33,10 +33,10 @@ const SCHEDULE = [
 export default function JFT() {
   return (
     <>
-
+  
 
       {/* Hero Section */}
-      <section className="page-hero text-white py-20 md:py-28">
+      <section className="bg-black text-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
@@ -57,15 +57,16 @@ export default function JFT() {
               <p className="text-lg text-white leading-relaxed mb-8 max-w-xl">
                 The JFT-Basic is the primary Japanese language requirement
                 for the Specified Skilled Worker (SSW) visa. Our structured
-                program ensures you're fully prepared — from basics to test-day confidence.
+                program ensures you&apos;re fully prepared — from basics to
+                test-day confidence.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button href="/contact" size="lg" variant="secondary">
+                <Button to="/contact" size="lg" variant="secondary">
                   Enroll Now
                 </Button>
 
-                <Button href="/contact" variant="ghost" size="lg">
+                <Button to="/contact" variant="ghost" size="lg">
                   Ask a Question
                 </Button>
               </div>
@@ -86,6 +87,7 @@ export default function JFT() {
                     <div className="text-xs uppercase tracking-wider text-white/70 font-semibold mb-2">
                       {item.label}
                     </div>
+
                     <div className="text-xl font-bold text-white">
                       {item.value}
                     </div>
@@ -94,7 +96,7 @@ export default function JFT() {
               </div>
 
               <Button
-                href="/contact"
+                to="/contact"
                 size="md"
                 className="w-full mt-10 justify-center"
                 variant="secondary"
@@ -111,6 +113,7 @@ export default function JFT() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
+            {/* Left */}
             <div>
               <span className="text-[#E60013] font-semibold uppercase tracking-wider text-sm">
                 What is JFT-Basic?
@@ -135,6 +138,7 @@ export default function JFT() {
               </p>
             </div>
 
+            {/* Right */}
             <div className="bg-gray-100 rounded-xl p-8">
               <h4 className="font-bold text-gray-900 text-xl mb-6">
                 Test Sections
@@ -144,27 +148,31 @@ export default function JFT() {
                 {LEVELS.map((l, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="w-3 h-3 rounded-full bg-[#E60013] mt-2 flex-shrink-0" />
+
                     <div>
                       <strong className="text-gray-900 block mb-1">
                         {l.name}
                       </strong>
-                      <p className="text-sm text-gray-600">{l.desc}</p>
+
+                      <p className="text-sm text-gray-600">
+                        {l.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
 
               <div className="bg-white p-4 rounded-lg text-sm text-gray-600 shadow-sm">
-                No passing score for individual sections — overall score determines pass/fail.
+                No passing score for individual sections — overall score
+                determines pass/fail.
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* Curriculum */}
-      <section className="py-20 page-hero text-white">
+      <section className="py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
 
           <span className="text-[#E60013] uppercase tracking-wider font-semibold text-sm">
@@ -172,7 +180,7 @@ export default function JFT() {
           </span>
 
           <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-12 text-white">
-            What You'll Learn
+            What You&apos;ll Learn
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -222,8 +230,11 @@ export default function JFT() {
 
                 <ul className="space-y-3">
                   {m.items.map((item, j) => (
-                    <li key={j} className="text-white/90 text-sm">
-                      {item}
+                    <li
+                      key={j}
+                      className="flex gap-3 text-white/90 text-sm"
+                    >
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -233,8 +244,50 @@ export default function JFT() {
         </div>
       </section>
 
-      {/* Schedule (optional uncomment) */}
-      {/* same as before */}
+      {/* Schedule */}
+      {/*
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+
+          <span className="text-blue-700 uppercase tracking-wider font-semibold text-sm">
+            Batches
+          </span>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-12">
+            Class Schedule
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {SCHEDULE.map((s, i) => (
+              <div
+                key={i}
+                className="bg-gray-100 rounded-xl p-8 text-center shadow-sm"
+              >
+                <div className="text-4xl mb-4">🕐</div>
+
+                <div className="font-bold text-gray-900 text-lg mb-3">
+                  {s.label}
+                </div>
+
+                <div className="text-gray-600 text-sm font-semibold mb-2">
+                  {s.day}
+                </div>
+
+                <div className="text-blue-700 font-bold text-base">
+                  {s.time}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button to="/contact" size="lg">
+              Register for JFT Course
+            </Button>
+          </div>
+        </div>
+      </section>
+      */}
     </>
   );
 }

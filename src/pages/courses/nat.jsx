@@ -20,7 +20,7 @@ export default function NAT() {
     <>
 
       {/* Hero */}
-      <section className="page-hero text-white py-20 md:py-28">
+      <section className="bg-black text-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -30,7 +30,7 @@ export default function NAT() {
                 Language Certification
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4">g
                 NAT-TEST
               </h1>
 
@@ -197,7 +197,7 @@ export default function NAT() {
       </section>
 
       {/* Curriculum */}
-      <section className="py-20 page-hero text-white">
+      <section className="py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
 
           <span className="text-[#E60013] uppercase tracking-wider font-semibold text-sm">
