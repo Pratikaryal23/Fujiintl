@@ -9,9 +9,9 @@ const VISA_STUDENTS = [
   {
     name: "Priya Sharma",
     country: "India",
-    flag: "🇮🇳",
-    university: "University of Melbourne",
-    universityFlag: "🇦🇺",
+  
+    university: "Osaka University",
+
     visaType: "Student Visa 500",
     year: "2024",
     photo: "https://randomuser.me/api/portraits/women/44.jpg",
@@ -20,9 +20,9 @@ const VISA_STUDENTS = [
   {
     name: "Ahmed Al-Rashid",
     country: "Nepal",
-    flag: "🇳🇵",
-    university: "University of Toronto",
-    universityFlag: "🇨🇦",
+    
+    university: " Kyoto University",
+
     visaType: "Study Permit",
     year: "2024",
     photo: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -31,9 +31,9 @@ const VISA_STUDENTS = [
   {
     name: "Li Wei",
     country: "China",
-    flag: "🇨🇳",
-    university: "University College London",
-    universityFlag: "🇬🇧",
+
+    university: "Tokyo University",
+
     visaType: "Student Visa",
     year: "2025",
     photo: "https://randomuser.me/api/portraits/men/65.jpg",
