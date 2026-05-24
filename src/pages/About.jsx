@@ -34,13 +34,13 @@ const team = [
     name: "Pradip Gharti",
     role: "Founder & CEO",
     region: "Nepal",
-    photo: "",
+    photo: "pradeep.jpg",
   },
   {
     name: "Binod Bc",
     role: "Managing Director",
     region: "Nepal",
-    photo: "",
+    photo: "binod.jpg",
   },
 ];
 
@@ -308,47 +308,46 @@ export default function About() {
 
           {/* Team Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {team.map(({ name, role, region, photo }, i) => (
-              <div
-                key={name}
-                className="text-center"
-                style={{
-                  animationDelay: `${(i + 1) * 0.1}s`,
-                }}
-              >
-                {/* Avatar */}
-                <div className="mx-auto mb-4 w-28 h-28 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
-
-                  {photo ? (
-                    <img
-                      src={photo}
-                      alt={name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <span className="text-sm text-gray-500">
-                      Add photo
-                    </span>
-                  )}
-
-                </div>
-
-                {/* Info */}
-                <div className="font-semibold text-lg mb-1 text-black">
-                  {name}
-                </div>
-
-                <div className="text-sm text-gray-600 mb-3">
-                  {role}
-                </div>
-
-                <div className="text-xs text-gray-500">
-                  ◉ {region}
-                </div>
-
-              </div>
-            ))}
+  {team.map(({ name, role, region, photo }, i) => (
+    <div
+      key={name}
+      className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group max-w-[320px] mx-auto"
+      style={{
+        animationDelay: `${(i + 1) * 0.1}s`,
+      }}
+    >
+      {/* Image */}
+      <div className="overflow-hidden">
+        {photo ? (
+          <img
+            src={photo}
+            alt={name}
+            className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : (
+          <div className="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500">
+            Add photo
           </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-5 text-center">
+        <h2 className="text-xl font-bold text-black mb-2">
+          {name}
+        </h2>
+
+        <p className="text-red-600 font-medium mb-3">
+          {role}
+        </p>
+
+        <div className="text-sm text-gray-500">
+          ◉ {region}
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
 
         </div>
       </section>
