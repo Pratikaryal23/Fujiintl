@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            TARGET="~/fujiintl.durlavparajuli.com.np"
+            TARGET="~/fujiintl.com"
             echo "🧹 Cleaning old build files on $TARGET (preserving .htaccess)..."
             cd $TARGET && find . -mindepth 1 -maxdepth 1 ! -name '.htaccess' -delete 2>/dev/null || true
             echo "✅ Cleanup completed"
@@ -58,7 +58,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           source: "dist/**"
-          target: "~/fujiintl.durlavparajuli.com.np"
+          target: "~/fujiintl.com"
           strip_components: 1
 
       - name: Verify upload
@@ -69,9 +69,9 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             echo "🔍 Verifying upload..."
-            ls -la ~/fujiintl.durlavparajuli.com.np
+            ls -la ~/fujiintl.com
             echo "✅ Deployment complete!"
-            echo "🌐 Your site should be available at: https://fujiintl.durlavparajuli.com.np"
+            echo "🌐 Your site should be available at: https://fujiintl.com"
 
       - name: Notify deployment status
         if: always()
