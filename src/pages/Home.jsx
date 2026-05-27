@@ -1,17 +1,32 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-// import CountUp from "react-countup";
-
-import { useInView } from "react-intersection-observer";
+import { useRef, useState } from "react";
 import Achievements from "../components/Achivements";
 
 
 const stats = [
-  { value: "20+", label: "Years of Guidance" },
-  { value: "100+", label: "Successful Visa Assistance" },
-  { value: "50+", label: "Partner Institutions" },
-  { value: "95%", label: "Client Satisfaction" },
+  {
+    number: 20,
+    suffix: "+",
+    title: "YEARS OF GUIDANCE",
+  },
+  {
+    number: 100,
+    suffix: "+",
+    title: "SUCCESSFUL VISA ASSISTANCE",
+  },
+  {
+    number: 50,
+    suffix: "+",
+    title: "PARTNER INSTITUTIONS",
+  },
+  {
+    number: 95,
+    suffix: "%",
+    title: "CLIENT SATISFACTION",
+  },
 ];
+
 
 const services = [
   {
@@ -36,20 +51,68 @@ const services = [
 ];
 
 export default function Home() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.3,
-  });
+  
 
+ const sectionRef = useRef(null);
+  const [startCount, setStartCount] = useState(false);
+
+  const [counts, setCounts] = useState(
+    stats.map(() => 0)
+  );
+
+  // Detect when section enters screen
   useEffect(() => {
-    document.body.classList.add("bg-black");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartCount(true);
+          observer.disconnect(); // run once
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
 
-    document.title = "FUJI International Consultancy";
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
-    return () => {
-      document.body.classList.remove("bg-black");
-    };
+    return () => observer.disconnect();
   }, []);
+
+  // Counter Animation
+  useEffect(() => {
+    if (!startCount) return;
+
+    stats.forEach((stat, index) => {
+      let start = 0;
+      const end = stat.number;
+      const duration = 1000; // 2 seconds
+      const stepTime = 16;
+      const increment = end / (duration / stepTime);
+
+      const timer = setInterval(() => {
+        start += increment;
+
+        if (start >= end) {
+          setCounts((prev) => {
+            const updated = [...prev];
+            updated[index] = end;
+            return updated;
+          });
+          clearInterval(timer);
+        } else {
+          setCounts((prev) => {
+            const updated = [...prev];
+            updated[index] = Math.floor(start);
+            return updated;
+          });
+        }
+      }, stepTime);
+    });
+  }, [startCount]);
+
 
   return (
     <>
@@ -130,48 +193,38 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      {/* <section
-        ref={ref}
-        className="bg-[#0f0f0f] py-24 px-6 relative overflow-hidden"
-      >
-        {/* Glow Effects */}
-        {/* <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-red-600/10 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-red-600/10 blur-[120px]" />
+      <section
+      ref={sectionRef}
+      className="relative bg-black py-24 overflow-hidden"
+    >
+      {/* Red Glow Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,0,0,0.15),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,0,0,0.12),transparent_35%)]"></div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {stats.map((item) => {
-              const number = parseInt(item.value);
+      <div className="relative max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="group relative rounded-[34px] border border-red-900/40 bg-white/5 backdrop-blur-md py-16 px-8 text-center overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-red-500 hover:shadow-[0_0_35px_rgba(255,0,0,0.25)]"
+            >
+              {/* Glow Effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-red-500/10 via-transparent to-transparent"></div>
 
-              return (
-                <div
-                  key={item.label}
-                  className="bg-white/5 border border-white/10 backdrop-blur-md rounded-[28px] p-10 hover:border-red-600/40 hover:-translate-y-2 transition duration-300"
-                >
-                  <h2 className="text-4xl md:text-5xl font-bold text-[#E60013] mb-4">
-                    {inView ? (
-                      <CountUp start={0} end={number} duration={2.5} />
-                    ) : (
-                      0
-                    )}
+              {/* Number */}
+              <h2 className="relative text-6xl font-bold text-red-600 mb-5 tracking-tight">
+                {counts[index]}
+                {stat.suffix}
+              </h2>
 
-                    {item.value.includes("+")
-                      ? "+"
-                      : item.value.includes("%")
-                      ? "%"
-                      : ""}
-                  </h2>
-
-                  <p className="uppercase tracking-[3px] text-white/60 text-sm">
-                    {item.label}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div> */}
-      {/* </section> */} 
-
+              {/* Title */}
+              <p className="relative text-sm tracking-[5px] text-gray-400 uppercase leading-7">
+                {stat.title}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
       {/* SERVICES */}
       <section className="bg-white py-24 px-6">
         <div className="max-w-7xl mx-auto">

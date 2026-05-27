@@ -9,9 +9,7 @@ const VISA_STUDENTS = [
   {
     name: "Priya Sharma",
     country: "India",
-  
     university: "Osaka University",
-
     visaType: "Student Visa 500",
     year: "2024",
     photo: "https://randomuser.me/api/portraits/women/44.jpg",
@@ -20,9 +18,7 @@ const VISA_STUDENTS = [
   {
     name: "Ahmed Al-Rashid",
     country: "Nepal",
-    
-    university: " Kyoto University",
-
+    university: "Kyoto University",
     visaType: "Study Permit",
     year: "2024",
     photo: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -31,13 +27,56 @@ const VISA_STUDENTS = [
   {
     name: "Li Wei",
     country: "China",
-
     university: "Tokyo University",
-
     visaType: "Student Visa",
     year: "2025",
     photo: "https://randomuser.me/api/portraits/men/65.jpg",
     course: "BSc Computer Science",
+  },
+  {
+    name: "Aarav Singh",
+    country: "Nepal",
+    university: "Nagoya University",
+    visaType: "Student Visa",
+    year: "2025",
+    photo: "https://randomuser.me/api/portraits/men/41.jpg",
+    course: "Hospitality Management",
+  },
+  {
+    name: "Sakura Tan",
+    country: "Malaysia",
+    university: "Waseda University",
+    visaType: "Study Permit",
+    year: "2024",
+    photo: "https://randomuser.me/api/portraits/women/22.jpg",
+    course: "Business Administration",
+  },
+  {
+    name: "Rohan Adhikari",
+    country: "Nepal",
+    university: "Hokkaido University",
+    visaType: "Student Visa",
+    year: "2025",
+    photo: "https://randomuser.me/api/portraits/men/54.jpg",
+    course: "Computer Engineering",
+  },
+  {
+    name: "Emily Wong",
+    country: "Singapore",
+    university: "Keio University",
+    visaType: "Student Visa",
+    year: "2024",
+    photo: "https://randomuser.me/api/portraits/women/30.jpg",
+    course: "International Relations",
+  },
+  {
+    name: "Bibek Thapa",
+    country: "Nepal",
+    university: "Tokyo Institute of Technology",
+    visaType: "Study Permit",
+    year: "2025",
+    photo: "https://randomuser.me/api/portraits/men/73.jpg",
+    course: "Artificial Intelligence",
   },
 ];
 
@@ -72,7 +111,7 @@ export default function Achievements() {
           loop
           speed={800}
           autoplay={{
-            delay: 2500,
+            delay: 1000,
             disableOnInteraction: false,
           }}
           pagination={{

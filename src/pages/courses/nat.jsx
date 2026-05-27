@@ -30,7 +30,7 @@ export default function NAT() {
                 Language Certification
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4">g
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4">
                 NAT-TEST
               </h1>
 
