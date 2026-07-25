@@ -192,7 +192,7 @@ function StudentCard({ student }) {
       {/* Bottom Badges */}
       <div className="flex justify-center gap-2 mt-5">
         <span className="text-xs bg-red-100 text-red-600 px-3 py-1 rounded-full font-medium">
-          Student Visa
+         Vis Granted
         </span>
 
         <span className="text-xs bg-gray-100 px-3 py-1 rounded-full font-medium">
