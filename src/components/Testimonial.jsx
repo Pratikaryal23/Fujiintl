@@ -5,24 +5,24 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Sandesh Acharya",
+    name: "Bishnumayabhattarai",
     country: "Butwal",
     text: "I was unsure at first, but now I'm confidently working at a specialty coffee shop—thanks to this amazing program!",
-    avatar: "/sandesh.jpeg",
+    avatar: "/a Bishnu maya bhattarai.jpeg",
   },
   {
     id: 2,
-    name: "Prateek Aryal",
-    country: "Gulmi",
+    name: " Dilip sanani",
+    country: "Butwal",
     text: "The hands-on training gave me the confidence I needed. It's the best learning experience I've ever had!",
-    avatar: "/bean2.png",
+    avatar: " /a dilip sanani.jpeg",
   },
   {
     id: 3,
-    name: "Michael Chen",
+    name: "Sada Gharti Magar",
     country: "Kathmandu",
     text: "I went to Japan after completing the course. Couldn't have done it without Fuji International Consultancy!",
-    avatar: "/bean1.png",
+    avatar: "/a sada gharti magar.jpeg",
   },
 ];
 

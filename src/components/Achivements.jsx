@@ -7,76 +7,38 @@ import "swiper/css/pagination";
 
 const VISA_STUDENTS = [
   {
-    name: "Priya Sharma",
-    country: "India",
-    university: "Osaka University",
-    visaType: "Student Visa 500",
-    year: "2024",
-    photo: "https://randomuser.me/api/portraits/women/44.jpg",
-    course: "Master of Data Science",
-  },
-  {
-    name: "Ahmed Al-Rashid",
+    name: "Bishnu Maya Bhattarai",
     country: "Nepal",
-    university: "Kyoto University",
-    visaType: "Study Permit",
-    year: "2024",
-    photo: "https://randomuser.me/api/portraits/men/32.jpg",
-    course: "MBA – Finance",
+    year: "2026",
+    photo: "/a Bishnu maya bhattarai.jpeg",
   },
   {
-    name: "Li Wei",
-    country: "China",
-    university: "Tokyo University",
-    visaType: "Student Visa",
-    year: "2025",
-    photo: "https://randomuser.me/api/portraits/men/65.jpg",
-    course: "BSc Computer Science",
-  },
-  {
-    name: "Aarav Singh",
+    name: "Dilip Sanani",
     country: "Nepal",
-    university: "Nagoya University",
-    visaType: "Student Visa",
-    year: "2025",
-    photo: "https://randomuser.me/api/portraits/men/41.jpg",
-    course: "Hospitality Management",
+
+    year: "2026",
+    photo: "/a dilip sanani.jpeg",
   },
   {
-    name: "Sakura Tan",
-    country: "Malaysia",
-    university: "Waseda University",
-    visaType: "Study Permit",
-    year: "2024",
-    photo: "https://randomuser.me/api/portraits/women/22.jpg",
-    course: "Business Administration",
-  },
-  {
-    name: "Rohan Adhikari",
+    name: "Sada Gharti Magar",
     country: "Nepal",
-    university: "Hokkaido University",
-    visaType: "Student Visa",
-    year: "2025",
-    photo: "https://randomuser.me/api/portraits/men/54.jpg",
-    course: "Computer Engineering",
+
+    year: "2026",
+    photo: "/a sada gharti magar.jpeg",
   },
   {
-    name: "Emily Wong",
-    country: "Singapore",
-    university: "Keio University",
-    visaType: "Student Visa",
-    year: "2024",
-    photo: "https://randomuser.me/api/portraits/women/30.jpg",
-    course: "International Relations",
-  },
-  {
-    name: "Bibek Thapa",
+    name: "Sonu G.C",
     country: "Nepal",
-    university: "Tokyo Institute of Technology",
-    visaType: "Study Permit",
-    year: "2025",
-    photo: "https://randomuser.me/api/portraits/men/73.jpg",
-    course: "Artificial Intelligence",
+
+    year: "2026",
+    photo: "/a sonu G.c.jpeg",
+  },
+  {
+    name: "Athar Kamal",
+    country: "Nepal",
+
+    year: "2026",
+    photo: "/Athar Kamal.jpeg",
   },
 ];
 
@@ -87,7 +49,6 @@ export default function Achievements() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Header */}
         <div className="text-center mb-14">
           <span className="text-red-600 uppercase text-sm font-semibold">
@@ -99,7 +60,8 @@ export default function Achievements() {
           </h2>
 
           <p className="text-gray-600 max-w-2xl mx-auto mt-3">
-            Real students who successfully received visas and started their journey abroad.
+            Real students who successfully received visas and started their
+            journey abroad.
           </p>
         </div>
 
@@ -168,36 +130,72 @@ export default function Achievements() {
 
 function StudentCard({ student }) {
   return (
-    <div className="border rounded-2xl p-6 shadow-sm hover:shadow-lg transition bg-white h-full">
+    <div className="border rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 bg-white h-full overflow-hidden">
+      {/* Student Image */}
+      <div className="flex justify-center">
+        <div className="relative">
+          <img
+            src={student.photo}
+            alt={student.name}
+            className="w-32 h-32 rounded-full object-cover border-[5px] border-red-100 shadow-lg"
+          />
 
-      <div className="flex justify-center mb-4">
-        <img
-          src={student.photo}
-          alt={student.name}
-          className="w-24 h-24 rounded-full object-cover border"
-        />
+          {/* Approved Badge */}
+          {/* Premium Badge */}
+          {/* Verified Seal */}
+          <div className="absolute bottom-0 right-1">
+            <div className="w-10 h-10 rounded-full bg-green-500 border-4 border-white shadow-lg flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={3}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h3 className="text-center text-xl font-bold">{student.name}</h3>
-      <p className="text-center text-gray-500 text-sm">
-        {student.flag} {student.country}
+      {/* Name */}
+      <h3 className="text-center text-xl font-bold mt-8">{student.name}</h3>
+
+      {/* Country */}
+      <p className="text-center text-gray-500 text-sm mt-1">
+        {student.country}
       </p>
 
-      <div className="mt-4 bg-gray-50 p-4 rounded-xl text-center">
-        <p className="text-red-600 text-xs font-semibold uppercase">
-          {student.universityFlag} University
-        </p>
+      {/* Congratulations */}
+      <div className="mt-6 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-5 text-center">
+        <div
+          className="text-4xl text-red-600"
+          style={{ fontFamily: "'Great Vibes', cursive" }}
+        >
+          Congratulations!
+        </div>
 
-        <h4 className="font-semibold">{student.university}</h4>
-        <p className="text-sm text-gray-600">{student.course}</p>
+        <div className="text-3xl mt-2">🎉</div>
+
+        <p className="text-gray-600 text-sm mt-3 leading-6">
+          Wishing you success as you begin your exciting journey abroad. Your
+          dedication has paid off!
+        </p>
       </div>
 
-      <div className="flex justify-center gap-2 mt-4">
-        <span className="text-xs bg-red-100 text-red-600 px-3 py-1 rounded-full">
-          {student.visaType}
+      {/* Bottom Badges */}
+      <div className="flex justify-center gap-2 mt-5">
+        <span className="text-xs bg-red-100 text-red-600 px-3 py-1 rounded-full font-medium">
+          Student Visa
         </span>
 
-        <span className="text-xs bg-gray-100 px-3 py-1 rounded-full">
+        <span className="text-xs bg-gray-100 px-3 py-1 rounded-full font-medium">
           {student.year}
         </span>
       </div>
